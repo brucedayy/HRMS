@@ -1,0 +1,42 @@
+﻿<Window x:Class="HRMS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HRMS"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Background="{x:Null}" AllowsTransparency="True"
+        MouseLeftButtonDown="DragWindow" ResizeMode="NoResize" Name="mainWindow">
+    <Window.Resources>
+        <Style x:Key="FontAwesome">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/#FontAwesome" />
+            <Setter Property="TextBlock.Width" Value="30"></Setter>
+            <Setter Property="TextBlock.Height" Value="30"></Setter>
+            <Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+            <Setter Property="TextBlock.FontSize" Value="30"></Setter>
+            <Setter Property="TextBlock.Foreground" Value="White"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Height="30" Background="Cornsilk" Orientation="Horizontal">
+                <Button Width="30" Height="Auto" Content="&#xf015;" Style="{DynamicResource FontAwesome}" Cursor="Hand" Background="Blue" BorderBrush="Blue" Name="btnAdministratorShow" Click="btnAdministratorShow_Click"/>
+                <TextBlock Width="880" Height="30" Background="Blue"></TextBlock>
+                <Button Width="30" Height="30" Content="&#xf068;" Style="{DynamicResource FontAwesome}" Cursor="Hand" Background="Blue" BorderBrush="Blue" VerticalAlignment="Top" Name="btnMinsize" Click="btnMinsize_Click"></Button>
+                <Button Width="30" Height="30" Content="&#xf00d;" Style="{DynamicResource FontAwesome}" Cursor="Hand" Background="Blue" BorderBrush="Blue" VerticalAlignment="Top" Name="btnClose" Click="btnClose_Click"></Button>
+                <Button Width="30" Height="30" Content="&#xf0c9;" Style="{DynamicResource FontAwesome}" Cursor="Hand" Background="Blue" BorderBrush="Blue" VerticalAlignment="Top" Name="btnMainNav" Click="btnMainNav_Click"></Button>
+            </StackPanel>
+            <StackPanel Height="540" Background="White">
+                <Frame x:Name="mainWindowContentFrame">
+                    <Frame.Content>
+                        <local:MainControlArea/>
+                    </Frame.Content>
+                </Frame>
+            </StackPanel>
+            <StackPanel Height="30" Background="Cornsilk" VerticalAlignment="Center">
+                <TextBlock Text="version1.0--copyright@bruceday" Height="30" FontSize="14" LineHeight="30"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

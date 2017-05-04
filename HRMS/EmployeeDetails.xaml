@@ -1,0 +1,101 @@
+﻿<Window x:Class="HRMS.EmployeeDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HRMS"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Background="{x:Null}" AllowsTransparency="True"
+        MouseLeftButtonDown="DragWindow" ResizeMode="NoResize" Name="mainWindow">
+    <Window.Resources>
+        <Style x:Key="FontAwesome">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/#FontAwesome" />
+            <Setter Property="TextBlock.Width" Value="30"></Setter>
+            <Setter Property="TextBlock.Height" Value="30"></Setter>
+            <Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+            <Setter Property="TextBlock.FontSize" Value="30"></Setter>
+            <Setter Property="TextBlock.Foreground" Value="White"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Width="1000" Background="AliceBlue">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Height="30" Background="Cornsilk" Orientation="Horizontal">
+                <Button Width="30" Height="Auto" Content="&#xf015;" Style="{DynamicResource FontAwesome}" Cursor="Hand" Background="Blue" BorderBrush="Blue" Name="btnAdministratorShow"/>
+                <TextBlock Width="880" Height="30" Background="Blue"></TextBlock>
+                <Button Width="30" Height="30" Content="&#xf0c7;" Style="{DynamicResource FontAwesome}" Cursor="Hand" Background="Blue" BorderBrush="Blue" VerticalAlignment="Top" Name="btnMinsize"></Button>
+                <Button Width="30" Height="30" Content="&#xf0c4;" Style="{DynamicResource FontAwesome}" Cursor="Hand" Background="Blue" BorderBrush="Blue" VerticalAlignment="Top" Name="btnClose"></Button>
+                <Button Width="30" Height="30" Content="&#xf0c9;" Style="{DynamicResource FontAwesome}" Cursor="Hand" Background="Blue" BorderBrush="Blue" VerticalAlignment="Top" Name="btnMainNav"></Button>
+            </StackPanel>
+            <ScrollViewer Height="540" VerticalScrollBarVisibility="Visible">
+                <ScrollViewer.Content>
+                    <Canvas Width="800" Height="774" Background="AliceBlue">
+                        <Canvas Height="218" Canvas.Left="37" Canvas.Top="19" Width="206" Background="Blue"/>
+                        <TextBlock x:Name="textBlock" Canvas.Left="278" TextWrapping="Wrap" Text="ID" Canvas.Top="27" Height="27" Width="32"/>
+                        <TextBlock x:Name="textBlock1" Canvas.Left="277" TextWrapping="Wrap" Text="姓名" Canvas.Top="67"/>
+                        <TextBlock x:Name="textBlock2" Canvas.Left="277" TextWrapping="Wrap" Text="性别" Canvas.Top="103"/>
+                        <TextBlock x:Name="textBlock3" Canvas.Left="510" TextWrapping="Wrap" Text="出生日期" Canvas.Top="30" RenderTransformOrigin="-0.218,-1.767"/>
+                        <TextBlock x:Name="textBlock4" Canvas.Left="518" TextWrapping="Wrap" Text="体重" Canvas.Top="65" RenderTransformOrigin="-0.109,-0.6"/>
+                        <TextBox x:Name="txbId" Height="23" Canvas.Left="346" TextWrapping="Wrap" Canvas.Top="26" Width="120"/>
+                        <TextBox x:Name="txbName" Height="24" Canvas.Left="345" TextWrapping="Wrap" Canvas.Top="64" Width="120"/>
+                        <TextBox x:Name="txbBorndate" Height="24" Canvas.Left="584" TextWrapping="Wrap" Canvas.Top="28" Width="182"/>
+                        <TextBox x:Name="txbBodyweight" Height="23" Canvas.Left="584" TextWrapping="Wrap" Canvas.Top="61" Width="181"/>
+                        <RadioButton x:Name="radioMale" Content="男" Canvas.Left="351" Canvas.Top="104"/>
+                        <RadioButton x:Name="radioFemale" Content="女" Canvas.Left="395" Canvas.Top="104"/>
+                        <TextBlock x:Name="textBlock5" Canvas.Left="519" TextWrapping="Wrap" Text="身高" Canvas.Top="102"/>
+                        <TextBox x:Name="txbHeight" Height="23" Canvas.Left="583" TextWrapping="Wrap" Canvas.Top="99" Width="120"/>
+                        <TextBlock x:Name="textBlock6" Canvas.Left="279" TextWrapping="Wrap" Text="民族" Canvas.Top="141"/>
+                        <TextBlock x:Name="textBlock7" Canvas.Left="456" TextWrapping="Wrap" Text="籍贯" Canvas.Top="141" RenderTransformOrigin="1,0.591"/>
+                        <TextBlock x:Name="textBlock8" Canvas.Left="581" TextWrapping="Wrap" Text="婚姻状况" Canvas.Top="142"/>
+                        <TextBox x:Name="txbNation" Height="20" Canvas.Left="345" TextWrapping="Wrap" Canvas.Top="138" Width="74" RenderTransformOrigin="-0.182,-0.217"/>
+                        <TextBox x:Name="txbNativeplace" Height="23" Canvas.Left="490" TextWrapping="Wrap" Canvas.Top="139" Width="52" RenderTransformOrigin="0.25,-0.217"/>
+                        <TextBlock x:Name="textBlock9" Canvas.Left="267" TextWrapping="Wrap" Text="政治面貌" Canvas.Top="178"/>
+                        <TextBox x:Name="txbPolstatus" Height="23" Canvas.Left="345" TextWrapping="Wrap" Canvas.Top="176" Width="49"/>
+                        <TextBlock x:Name="textBlock10" Canvas.Left="431" TextWrapping="Wrap" Text="健康状况" Canvas.Top="181"/>
+                        <TextBox x:Name="txbHealth" Height="23" Canvas.Left="489" TextWrapping="Wrap" Canvas.Top="177" Width="51"/>
+                        <TextBlock x:Name="textBlock11" Canvas.Left="593" TextWrapping="Wrap" Text="血型" Canvas.Top="181"/>
+                        <TextBlock x:Name="textBlock12" Canvas.Left="267" TextWrapping="Wrap" Text="身份证号码" Canvas.Top="212"/>
+                        <TextBox x:Name="txbIdcard" Height="23" Canvas.Left="345" TextWrapping="Wrap" Canvas.Top="209" Width="366"/>
+                        <Button x:Name="test" Width="200" Height="40" Content="退出" FontSize="20" Click="test_Click" Canvas.Left="278" Canvas.Top="712"/>
+                        <ListBox x:Name="lsbMaritalstatus" Height="22" Canvas.Left="656" Canvas.Top="140">
+                            <ListBoxItem Content="已婚"/>
+                            <ListBoxItem Content="未婚"/>
+                        </ListBox>
+                        <ListBox x:Name="lsbBloodgroup" Height="21" Canvas.Left="656" Canvas.Top="177" Width="53">
+                            <ListBoxItem>AB</ListBoxItem>
+                            <ListBoxItem>A</ListBoxItem>
+                            <ListBoxItem>B</ListBoxItem>
+                            <ListBoxItem>O</ListBoxItem>
+                        </ListBox>
+                        <TextBlock x:Name="textBlock13" Canvas.Left="41" TextWrapping="Wrap" Text="分配部门" Canvas.Top="267"/>
+                        <ListBox x:Name="lsbServeddep" Height="23" Canvas.Left="115" Canvas.Top="264" Width="231" />
+                        <TextBlock x:Name="textBlock14" Canvas.Left="43" TextWrapping="Wrap" Text="教育经历" Canvas.Top="311" RenderTransformOrigin="0.018,-1.267"/>
+                        <!--<Button Name="btnAddEducationExp" Height="30" Width="30" Canvas.Left="115" Canvas.Top="299" Click="btnAddEducationExp_Click">
+                                <TextBlock Width="26" Height="26" Text="+" FontSize="20" TextAlignment="Center"></TextBlock>
+                            </Button>-->
+                        <Canvas Width="456" Height="109" Background="Beige" Canvas.Left="116" Canvas.Top="308">
+                            <Label Content="时间1"></Label>
+                            <TextBox Width="400" Canvas.Left="48" Canvas.Top="1" Height="26"></TextBox>
+                            <Label Content="时间2" Canvas.Left="1" Canvas.Top="39"></Label>
+                            <TextBox Width="400" Canvas.Left="48" Canvas.Top="40" Height="26"></TextBox>
+                            <Label Content="时间3" Canvas.Left="3" Canvas.Top="77"></Label>
+                            <TextBox Width="400" Canvas.Left="48" Canvas.Top="78" Height="26"></TextBox>
+                        </Canvas>
+                        <Label x:Name="label" Content="工作经历" Canvas.Left="37" Canvas.Top="433" Width="60"/>
+                        <Canvas Height="113" Canvas.Left="115" Canvas.Top="440" Width="453" Background="Beige">
+                            <Label Content="时间1"></Label>
+                            <TextBox Width="400" Canvas.Left="48" Canvas.Top="1" Height="26"></TextBox>
+                            <Label Content="时间2" Canvas.Left="1" Canvas.Top="39"></Label>
+                            <TextBox Width="400" Canvas.Left="48" Canvas.Top="40" Height="26"></TextBox>
+                            <Label Content="时间3" Canvas.Left="3" Canvas.Top="77"></Label>
+                            <TextBox Width="400" Canvas.Left="48" Canvas.Top="78" Height="26"></TextBox>
+                        </Canvas>
+                    </Canvas>
+                </ScrollViewer.Content>
+            </ScrollViewer>
+            <StackPanel Height="30" Background="Cornsilk" VerticalAlignment="Center">
+                <TextBlock Text="version1.0--copyright@bruceday" Height="30" FontSize="14" LineHeight="30"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
